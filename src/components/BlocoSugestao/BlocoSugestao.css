@@ -1,0 +1,42 @@
+.sugestao {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div_campo_geral {
+    border: 1px solid#10af33;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgb(46, 46, 46);
+}
+
+.titulo {
+    border-bottom: 1px solid#10af33;
+    text-align: center;
+    width: 100%;
+}
+
+.corpo {
+    width: 90%;
+    text-align: justify;
+}
+
+.div_button {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.div_button button {
+    background-color: #10af33;
+    width: 15%;
+    height: 50px;
+    border:none;
+    border-radius: 15px;
+    margin: 15px;
+    cursor: pointer;
+}

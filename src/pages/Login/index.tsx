@@ -1,31 +1,36 @@
 import './Login.css'
-import {useState, useContext} from 'react'
-import cpfList from '../../db.json'
-import {useNavigate} from 'react-router-dom'
+import {useState, useContext, useEffect} from 'react'
 import {cpfContext } from '../../context/cpfContext'
+import axios, { AxiosResponse } from 'axios'
 
 export default function Login() {
 
+    const [dataApi, setDataApi] = useState<AxiosResponse<any, any>>()
+    const [cpfs, setCpfs] = useState<AxiosResponse<any, any>>();
+
+    
+    useEffect(() => {
+        axios.get('http://localhost:8080/envios')
+        .then(resposta => setDataApi(resposta.data))
+    
+        axios.get('http://localhost:8080/cpf_list')
+        .then(resposta => setCpfs(resposta.data))
+    },[])
+
     const [inputData, setInputData] = useState<any>()
-    const navigate = useNavigate();
     const {validate, validateCPF} = useContext(cpfContext)
 
     const submitForm = (event: any) => {
         event.preventDefault()
 
-        validate(cpfList.cpf_list, inputData)
-        if(validateCPF !== undefined) {
-            navigate('./home')
-        }
-        console.log(validateCPF)
-
+        validate(cpfs, inputData)
     }
 
     return(
         <section className='login'>
             <form onSubmit={submitForm}>
                 <label>Informe seu cpf</label>
-                <input value={inputData} onChange={e => setInputData(e.target.value)}/>
+                <input placeholder="ex: 000.000.000-00" value={inputData} maxLength={11} onChange={e => setInputData(e.target.value)}/>
                 <button>Entrar</button>
             </form>
         </section>

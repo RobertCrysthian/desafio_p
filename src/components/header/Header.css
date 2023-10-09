@@ -1,0 +1,17 @@
+.header_div {
+    background-color: rgb(94, 94, 94);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_div button {
+    height: 60px;
+    background-color: rgb(94, 94, 94);
+    border:none;
+    cursor:pointer;
+    color:#fff;
+    font-size: 18px;
+    margin: 0px, 15px;
+}
+
