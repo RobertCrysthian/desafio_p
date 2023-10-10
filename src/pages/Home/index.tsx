@@ -28,10 +28,7 @@ export default function Home() {
 
     return(
         <section className='home'>
-            <div className="home_div">
-                <p>Olá {validateCPF && validateCPF.name}</p>
-                <p>Você logou com o cpf: {validateCPF && validateCPF.cpf}</p>
-            </div>
+            <h1 className='home_title'>Mural</h1>
             {posts.map((e: any) => {
                 return (
                     <Sugestao titulo={e.title} texto={e.body} data={e.data}/>

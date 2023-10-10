@@ -2,6 +2,7 @@ import './Login.css'
 import {useState, useContext, useEffect} from 'react'
 import {cpfContext } from '../../context/cpfContext'
 import axios, { AxiosResponse } from 'axios'
+import { cpf }  from 'cpf-cnpj-validator'
 
 export default function Login() {
 
@@ -25,12 +26,13 @@ export default function Login() {
 
         validate(cpfs, inputData)
     }
+    
 
     return(
         <section className='login'>
             <form onSubmit={submitForm}>
                 <label>Informe seu cpf</label>
-                <input placeholder="ex: 000.000.000-00" value={inputData} maxLength={11} onChange={e => setInputData(e.target.value)}/>
+                <input placeholder="CPF (apenas números)" onBlur={() => setInputData(cpf.format(inputData))} value={inputData} maxLength={11} onChange={e => setInputData(e.target.value)}/>
                 <button>Entrar</button>
             </form>
         </section>

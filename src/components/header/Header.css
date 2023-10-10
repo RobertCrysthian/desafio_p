@@ -3,6 +3,11 @@
     height: 60px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo_header{
+    margin-left: 15px;
 }
 
 .header_div button {
@@ -13,5 +18,9 @@
     color:#fff;
     font-size: 18px;
     margin: 0px, 15px;
+}
+
+.header_div button:hover{
+    background-color: rgb(73, 73, 73);
 }
 

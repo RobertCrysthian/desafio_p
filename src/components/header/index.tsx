@@ -20,7 +20,7 @@ export default function Header () {
 
            <div className="header_div">
                 <div>
-                    <h1>Logo</h1>
+                    <h1 className='logo_header'>Logo</h1>
                 </div>
                 <div>
                     <button onClick={() => navigate('./home')}>Home</button>

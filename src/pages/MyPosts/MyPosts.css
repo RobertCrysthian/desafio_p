@@ -1,0 +1,34 @@
+.my_posts .title{
+    text-align: center;
+
+    font-size: 30px;
+}
+
+.centralize_personal_data{
+    display:flex;
+    justify-content: center;
+}
+
+.personal_data{
+    background-color: rgb(46, 46, 46);
+    width: 50%;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.personal_data p {
+    margin-left: 30px;
+}
+
+.cpf_div {
+    display:flex;
+    align-items: center;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    margin-top: 0;
+    color:aliceblue
+}
